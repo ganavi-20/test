@@ -27,3 +27,17 @@ def play_game():
         else:
             print("Cell already taken, try again.")
             continue
+        if check_winner(board):
+            print_board(board)
+            print(f"Player {player} wins!")
+            break
+
+        if all(board[i][j] != " " for i in range(3) for j in range(3)):  # Check if board is full
+            print_board(board)
+            print("It's a tie!")
+            break
+
+        player = "O" if player == "X" else "X"  # Switch player
+
+if __name__ == "__main__":
+    play_game()
