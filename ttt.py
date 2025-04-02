@@ -14,4 +14,16 @@ def print_board(board):
     if board[0][2] == board[1][1] == board[2][0] != " ":
         return True
     return False
-
+def play_game():
+    board = [[" "]*3 for _ in range(3)]  # Initialize empty board
+    player = "X"  # Start with player X
+    
+    while True:
+        print_board(board)
+        row, col = map(int, input(f"Player {player}, enter row and column (0-2) separated by space: ").split())
+        
+        if board[row][col] == " ":
+            board[row][col] = player
+        else:
+            print("Cell already taken, try again.")
+            continue
