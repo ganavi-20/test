@@ -38,3 +38,35 @@ int main() {
 
             printf("Player 1 is at position %d.\n", player1);
         }
+ else {
+            printf("\nPlayer 2's turn\n");
+            diceRoll = (rand() % 6) + 1;  
+            player2 += diceRoll;
+            if (player2 > 100) player2 = 100;  
+
+          
+            for (int i = 0; i < 10; i++) {
+                if (player2 == snakes[i]) {
+                    player2 = snakeEnd[i];
+                    printf("Oh no! Snake! Moving to %d.\n", player2);
+                    break;
+                }
+                if (player2 == ladders[i]) {
+                    player2 = ladderEnd[i];
+                    printf("Yay! Ladder! Moving to %d.\n", player2);
+                    break;
+                }
+            }
+
+            printf("Player 2 is at position %d.\n", player2);
+        }
+    }
+
+    if (player1 == 100) {
+        printf("\nPlayer 1 wins!\n");
+    } else {
+        printf("\nPlayer 2 wins!\n");
+    }
+
+    return 0;
+}
