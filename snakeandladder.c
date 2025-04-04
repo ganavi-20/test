@@ -16,4 +16,25 @@ int main() {
 
     while (player1 < 100 && player2 < 100) {
         turn++;
+ if (turn % 2 != 0) {
+            printf("\nPlayer 1's turn\n");
+            diceRoll = (rand() % 6) + 1; 
+            player1 += diceRoll;
+            if (player1 > 100) player1 = 100;  
 
+            
+            for (int i = 0; i < 10; i++) {
+                if (player1 == snakes[i]) {
+                    player1 = snakeEnd[i];
+                    printf("Oh no! Snake! Moving to %d.\n", player1);
+                    break;
+                }
+                if (player1 == ladders[i]) {
+                    player1 = ladderEnd[i];
+                    printf("Yay! Ladder! Moving to %d.\n", player1);
+                    break;
+                }
+            }
+
+            printf("Player 1 is at position %d.\n", player1);
+        }
