@@ -26,3 +26,29 @@ void determineWinner(int playerChoice, int computerChoice) {
         printf("Computer wins!\n");
     }
 }
+int main() {
+    int playerChoice, computerChoice;
+    srand(time(0));
+
+    
+    playerChoice = getPlayerChoice();
+
+  
+    computerChoice = getComputerChoice();
+
+    
+    printf("\nYou chose: ");
+    if (playerChoice == 1) printf("Rock\n");
+    else if (playerChoice == 2) printf("Paper\n");
+    else printf("Scissors\n");
+
+    printf("Computer chose: ");
+    if (computerChoice == 1) printf("Rock\n");
+    else if (computerChoice == 2) printf("Paper\n");
+    else printf("Scissors\n");
+
+    
+    determineWinner(playerChoice, computerChoice);
+
+    return 0;
+}
