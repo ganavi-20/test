@@ -18,3 +18,21 @@ while attempts > 0 and not guessed_word:
         if guess in guessed_letters:
             print(f"You already guessed the letter '{guess}'. Try again.")
             continue
+        guessed_letters.append(guess)
+
+        if guess in word:
+            print(f"Good guess! The letter '{guess}' is in the word.")
+        else:
+            attempts -= 1
+            print(f"Oops! The letter '{guess}' is not in the word.")
+
+        if all(letter in guessed_letters for letter in word):
+            guessed_word = True
+
+    if guessed_word:
+        print(f"Congratulations! You've guessed the word: {word}")
+    else:
+        print(f"Sorry, you're out of attempts. The word was: {word}")
+
+# Start the game
+hangman()
