@@ -5,3 +5,9 @@ def send_notification(title, message, timeout=10):
         title=title,
         message=message,
         timeout=timeout)
+    print("Desktop Notifier started...")
+
+
+interval = 5  
+title = "Reminder"
+message = "This is your notification reminder!"
