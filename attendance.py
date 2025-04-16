@@ -12,3 +12,15 @@ def mark_attendance(students):
             else:
                 print("Please enter 'y' for present or 'n' for absent.")
     return attendance
+def display_attendance(attendance):
+    print("\n--- Attendance Report ---")
+    for student, status in attendance.items():
+        print(f"{student}: {status}")
+    print("------------------------")
+
+
+students_list = ["John", "Alice", "Bob", "Eva", "Sam"]
+
+attendance_record = mark_attendance(students_list)
+
+display_attendance(attendance_record)
