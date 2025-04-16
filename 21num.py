@@ -24,3 +24,13 @@ while current < 21:
         if current >= 21:
             print("Oh no! You said 21. You lose!")
             break
+comp_count = random.randint(1, 3)
+        comp_numbers = list(range(current + 1, current + comp_count + 1))
+        current = comp_numbers[-1]
+        print(f"Computer says: {', '.join(map(str, comp_numbers))}")
+
+        if current >= 21:
+            print("Computer said 21. You win!")
+            break
+    except ValueError:
+        print("Please enter numbers only.")
