@@ -11,3 +11,7 @@ def send_notification(title, message, timeout=10):
 interval = 5  
 title = "Reminder"
 message = "This is your notification reminder!"
+time.sleep(interval)  # Wait for the interval time
+send_notification(title, message)
+
+print("Notification sent!")
