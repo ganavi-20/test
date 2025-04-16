@@ -18,3 +18,12 @@ while True:
     img_np = np.array(img)
     
     frame = cv2.cvtColor(img_np, cv2.COLOR_RGB2BGR)
+    out.write(frame)
+
+    if time.time() - start_time > duration:
+        break
+
+out.release()
+cv2.destroyAllWindows()
+
+print("Screen recording saved as 'screen_recording.avi'")
