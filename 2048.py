@@ -62,3 +62,25 @@ def play():
 
         if move not in 'wasd':
             continue
+        if move not in 'wasd':
+            continue
+
+        if move == 'w':
+            new_board = move_up(board)
+        elif move == 's':
+            new_board = move_down(board)
+        elif move == 'a':
+            new_board = move_left(board)
+        elif move == 'd':
+            new_board = move_right(board)
+
+        if new_board != board:
+            board = new_board
+            add_new_tile(board)
+
+        if not can_move(board):
+            print_board(board)
+            print("Game Over!")
+            break
+
+play()
