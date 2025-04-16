@@ -20,3 +20,21 @@ def flames_result(count):
         else:
             flames = flames[:len(flames)-1]
     return flames[0]
+def get_relationship(letter):
+    return {
+        'F': 'Friends',
+        'L': 'Love',
+        'A': 'Affection',
+        'M': 'Marriage',
+        'E': 'Enemies',
+        'S': 'Siblings'
+    }[letter]
+
+name1 = input("Enter the first name: ")
+name2 = input("Enter the second name: ")
+
+count = remove_common_letters(name1, name2)
+result_letter = flames_result(count)
+relationship = get_relationship(result_letter)
+
+print(f"\nRelationship between {name1} and {name2}: {relationship}")
