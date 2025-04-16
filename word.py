@@ -20,3 +20,11 @@ while attempts > 0 and "_" in guessed:
             if letter == guess:
                 guessed[i] = guess
         print("✅ Correct!")
+        else:
+        attempts -= 1
+        print(f"❌ Wrong! Attempts left: {attempts}")
+
+if "_" not in guessed:
+    print(f"\n🎉 You guessed the word: {word}!")
+else:
+    print(f"\n💀 Game over! The word was: {word}")
